@@ -1,0 +1,3 @@
+// imports various sets of tasks
+apply plugin: 'java'
+apply plugin: 'idea'
