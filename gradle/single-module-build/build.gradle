@@ -1,3 +1,12 @@
 // imports various sets of tasks
 apply plugin: 'java'
 apply plugin: 'idea'
+
+dependencies {
+    testCompile 'junit:junit:4.10'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
