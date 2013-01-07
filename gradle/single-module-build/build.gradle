@@ -10,3 +10,44 @@ repositories {
     mavenLocal()
     mavenCentral()
 }
+
+task simpleTask() {
+    println 'This is a simple task'
+}
+
+task otherTask(dependsOn: compileJava){
+    description 'Another simple tasks for demo'
+}
+
+configure(simpleTask){
+    description 'A really simple task for demo purposes only'
+    dependsOn compileJava
+}
+
+task generateVersionFile(type: Generate){
+    version '2.0'
+    outputFile = file("$project.buildDir/version.txt")
+}
+
+task showContents(dependsOn: generateVersionFile) << {
+    println generateVersionFile.outputFile.text
+}
+
+class Generate extends DefaultTask{
+    @Input
+    String version
+
+    @OutputFile
+    File outputFile
+
+    @TaskAction
+    void generate(){
+        def file = getOutputFile()
+        if(!file.isFile()){
+            file.parentFile.mkdirs()
+            file.createNewFile()
+        }
+        file.write "Version: ${getVersion()}"
+    }
+}
+

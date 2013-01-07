@@ -1,0 +1,10 @@
+// In the below, the whole method is executed on load, except 
+//  the doLast which is executed afterwards
+
+task simpleImplTask() {
+    description 'Simple task for the Impl module'
+
+    doLast{
+        println 'Simple Impl task'
+    }
+}

@@ -1,0 +1,7 @@
+// NB the leftShift overload tells gradle to execute when 
+//  called and not on load
+
+task simpleApiTask() <<  {
+    description 'Simple task for the API module'
+    println 'Simple API task'
+}
