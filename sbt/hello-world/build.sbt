@@ -2,4 +2,4 @@ name := "helloworld"
 
 version := "1.0"
 
-scalaVersion := "2.9.3"
+scalaVersion := "2.9.1"
