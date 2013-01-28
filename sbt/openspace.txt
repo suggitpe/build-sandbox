@@ -22,5 +22,27 @@ Basics:
     - see it fail due to lack of dependencies
     - now open up the build.sbt and add in a dependencu with
         [libraryDependencies += "org.scalatest" %% "scalatest" % "1.9.1"]
+    - explain the syntax
 Now we have a running test.
+=================================
+
+Now lets play about a little bit.
+1. Change the console prompt [shellPrompt := {state => System.getProperty("user.name") +  "> " }]
+2. Change the pol interval [pollInterval := 1000]
+3. Now lets create a simple hello world task [TaskKey[Unit]("hello") := { println("Hello World!") }]
+4. Now lets add a plugin.  Here we need to add the sbt idea plugin.  Create project/plugins.sbt and add:
+    resolvers += "Sonatype snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/"
+    addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.3.0-SNAPSHOT")
+=================================
+
+=================================
+
+Now lets have a look at the multi module build
+1. Recap what we did for the single module build
+2. For sake of brevity, copy the plugins.sbt and build.properties over
+3. Now explain the dir structure: rds-api and rds-impl
+4. Create the empty projects first
+5. Now create the basic Build.scala class that we will work form
+
+
 
