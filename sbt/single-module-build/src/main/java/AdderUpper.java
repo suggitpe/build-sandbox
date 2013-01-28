@@ -1,7 +1,5 @@
-package org.suggs.buildsandbox;
-
 /**
- * Dummy class to help with gradle build process.
+ * Dummy class to help with build process.
  */
 public class AdderUpper {
 
