@@ -1,0 +1,25 @@
+Basics:
+1. Create a basic project with no source
+2. Run SBT (in a console in console mode) and then run:
+    - tasks to see the available tasks
+    - compile and show that the classes are compiled into target
+    - note that they are all in a scala 2.9.2 directory
+    - run package and note the name of the jar file
+    - run clean to start again
+3. Talk through the fact that SBT is a simple bootstrap and then show the executable.  Look up the fact that the sbt jar is downloaded.  Create a dir called project and in there pop a build.properties: [sbt.version=0.12.2]
+    - restart sbt and see the download
+    - then increament to a version that does not exist and restart .. note the failures
+    - put it back to 0.12.2
+4. Now go into the .sbt files in the root of the project:
+    - create a file called build.sbt
+    - add some attributes [name, version, scalaVersion] using :=
+    - note the line separators
+    - restart the console
+    - now do a full packge and go through the jar and its contents
+5. Now lets create a test:
+    - create a directory src/test/java
+    - in there pop a test class Footest.java
+    - see it fail due to lack of dependencies
+    - now open up the build.sbt and add in a dependencu with
+        [libraryDependencies += "junit" % "junit" % "4.9"]
+
