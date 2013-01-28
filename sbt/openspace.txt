@@ -21,5 +21,6 @@ Basics:
     - in there pop a test class Footest.java
     - see it fail due to lack of dependencies
     - now open up the build.sbt and add in a dependencu with
-        [libraryDependencies += "junit" % "junit" % "4.9"]
+        [libraryDependencies += "org.scalatest" %% "scalatest" % "1.9.1"]
+Now we have a running test.
 
