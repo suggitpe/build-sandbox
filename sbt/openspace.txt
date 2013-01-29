@@ -42,7 +42,9 @@ Now lets have a look at the multi module build
 2. For sake of brevity, copy the plugins.sbt and build.properties over
 3. Now explain the dir structure: rds-api and rds-impl
 4. Create the empty projects first
-5. Now create the basic Build.scala class that we will work form
+5. Now create the basic Build.scala class that we will work from
+ - start with a base project and then build them out steadily
+ - work from the base project out
 
 
 
