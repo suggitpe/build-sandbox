@@ -26,4 +26,21 @@ subprojects { subproject ->
         provider: 'gradle'
     )
 
+
+
+}
+
+project("rds-api"){
+
+    dependencies{
+    }
+
+}
+
+project("rds-impl"){
+
+    dependencies {
+        compile(project(':rds-api'))
+    }
+
 }
