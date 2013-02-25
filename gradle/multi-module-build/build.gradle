@@ -10,8 +10,6 @@ subprojects { subproject ->
     version = '1.0-SNAPSHOT'
     buildDir = 'target'
 
-    defaultTasks 'build'
-
     repositories {
         mavenLocal()
         mavenCentral()
@@ -24,16 +22,17 @@ subprojects { subproject ->
         testRuntime "log4j:log4j:$log4jVersion"
     }
 
-    manifest.mainAttributes( 
-        provider: 'gradle'
-    )
-
-
+    jar{
+        manifest{
+            attributes 'Implementation-Title': name, 'Implementation-Version': version
+        }
+    }
 
 }
 
 project("rds-api"){
 
+    description = "The API library for the multi module build"
     dependencies{
     }
 
@@ -41,8 +40,9 @@ project("rds-api"){
 
 project("rds-impl"){
 
+    description = "The implemenation of the APIs defined in the API project"
     dependencies {
-        compile(project(':rds-api'))
+        compile project(':rds-api')
     }
 
 }

@@ -6,8 +6,16 @@ group = 'org.suggs.gradle-sandbox'
 version = '1.0'
 buildDir = 'target'
 
-task release(){
+task release(dependsOn: 'distribution') << {
+    println "Releasing"
 }
 
-task deploy(){
+task distribution << {
+    println "Building the application with version=$version"
+}
+
+gradle.taskGraph.whenReady {taskGraph ->
+    if(!taskGraph.hasTask(release)){
+        version = version + "-SNAPSHOT"
+    }
 }
