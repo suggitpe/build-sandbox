@@ -1,3 +1,5 @@
+defaultTasks 'clean', 'build'
+
 subprojects { subproject ->
 
     apply plugin: 'java'

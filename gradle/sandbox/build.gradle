@@ -1,0 +1,13 @@
+defaultTasks 'clean', 'build'
+
+apply plugin: 'java'
+
+group = 'org.suggs.gradle-sandbox'
+version = '1.0'
+buildDir = 'target'
+
+task release(){
+}
+
+task deploy(){
+}

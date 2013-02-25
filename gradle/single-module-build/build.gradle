@@ -1,6 +1,7 @@
-// imports various sets of tasks
 apply plugin: 'java'
 apply plugin: 'idea'
+
+defaultTasks 'clean', 'build'
 
 group = 'org.suggs.build-sandbox'
 version = '1.0-SNAPSHOT'
