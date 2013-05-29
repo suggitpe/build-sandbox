@@ -5,7 +5,6 @@ allprojects{
 subprojects { subproject ->
 
     apply plugin: 'java'
-    apply plugin: 'maven'
     apply plugin: 'idea'
 
     group = 'org.suggs.build-sandbox'
