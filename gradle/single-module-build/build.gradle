@@ -8,7 +8,7 @@ version = '1.0-SNAPSHOT'
 buildDir = 'target'
 
 dependencies {
-    testCompile 'junit:junit:4.10'
+    testCompile 'junit:junit:4.11'
 }
 
 repositories {
