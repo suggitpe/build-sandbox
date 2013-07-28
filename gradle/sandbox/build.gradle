@@ -6,6 +6,9 @@ group = 'org.suggs.gradle-sandbox'
 version = '1.0'
 buildDir = 'target'
 
+task wrapper(type: Wrapper){
+    gradleVersion = '1.6'
+}
 
 task release(dependsOn: 'distribution') << {
     println "Releasing"

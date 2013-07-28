@@ -7,6 +7,10 @@ group = 'org.suggs.build-sandbox'
 version = '1.0-SNAPSHOT'
 buildDir = 'target'
 
+task wrapper(type: Wrapper){
+    gradleVersion = '1.6'
+}
+
 dependencies {
     testCompile 'junit:junit:4.11'
 }
