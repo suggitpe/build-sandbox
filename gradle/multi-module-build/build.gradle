@@ -4,13 +4,14 @@ allprojects{
 
 task wrapper(type: Wrapper){
     description = "Generates gradlew scripts for NIX and win envs"
-    gradleVersion = '1.6'
+    gradleVersion = '1.9'
 }
 
 subprojects { subproject ->
 
     apply plugin: 'java'
     apply plugin: 'idea'
+    apply from: "${rootDir}/libraries.gradle"
 
     group = 'org.suggs.build-sandbox'
     version = '1.0-SNAPSHOT'
@@ -22,10 +23,12 @@ subprojects { subproject ->
     }
 
     dependencies {
-        compile "org.slf4j:slf4j-api:$slf4jVersion"
-        testCompile "junit:junit:$junitVersion"
-        testRuntime "org.slf4j:slf4j-log4j12:$slf4jVersion"
-        testRuntime "log4j:log4j:$log4jVersion"
+        compile libs.slf4j_api
+        
+        testCompile libs.junit
+
+        testRuntime slf4j_log4j,
+                log4j
     }
 
     jar{
