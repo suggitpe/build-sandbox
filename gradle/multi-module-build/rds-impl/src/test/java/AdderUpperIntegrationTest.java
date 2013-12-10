@@ -4,12 +4,9 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-/**
- * Test for the adder upper
- */
-public class AdderUpperImplTest {
+public class AdderUpperIntegrationTest{
 
-    private AdderUpper adderUpper;
+	private AdderUpper adderUpper;
 
     @Before
     public void onSetup() {
@@ -19,6 +16,5 @@ public class AdderUpperImplTest {
     @Test
     public void shouldAddTwoIntsTogther() {
         assertThat(adderUpper.add(1, 3), is(5));
-    }
-
+    }	
 }

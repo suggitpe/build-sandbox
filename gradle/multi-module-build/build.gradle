@@ -1,11 +1,13 @@
-allprojects{
+allprojects {
     defaultTasks 'clean', 'build'
 }
 
-task wrapper(type: Wrapper){
-    description = "Generates gradlew scripts for NIX and win envs"
+task wrapper(type: Wrapper) {
+    description = 'Generates gradlew scripts for NIX and win envs'
     gradleVersion = '1.9'
 }
+
+
 
 subprojects { subproject ->
 
@@ -18,36 +20,47 @@ subprojects { subproject ->
     buildDir = 'target'
 
     repositories {
-        mavenLocal()
         mavenCentral()
     }
 
     dependencies {
         compile libs.slf4j_api
-        
+
         testCompile libs.junit
 
-        testRuntime slf4j_log4j,
-                log4j
+        testRuntime libs.slf4j_log4j,
+                libs.log4j
     }
 
-    jar{
-        manifest{
+    jar {
+        manifest {
             attributes 'Implementation-Title': name, 'Implementation-Version': version
         }
     }
 
-}
-
-project("rds-api"){
-
-    description = "The API library for the multi module build"
-    dependencies{
+    test {
+        useJUnit {
+            includeCategories 'support.UnitTest'
+        }
     }
 
+    task integrationTest(type: Test, dependsOn: test) {
+        useJUnit {
+            includeCategories 'support.IntegrationTest'
+        }
+    }
+
+    check.dependsOn integrationTest
 }
 
-project("rds-impl"){
+project("rds-api") {
+
+    description = 'The API library for the multi module build'
+    dependencies {}
+
+}
+
+project("rds-impl") {
 
     description = "The implemenation of the APIs defined in the API project"
     dependencies {
