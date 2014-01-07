@@ -17,7 +17,6 @@ subprojects { subproject ->
 
     group = 'org.suggs.build-sandbox'
     version = '1.0-SNAPSHOT'
-    buildDir = 'target'
 
     repositories {
         mavenCentral()

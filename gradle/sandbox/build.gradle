@@ -4,7 +4,6 @@ apply plugin: 'java'
 
 group = 'org.suggs.gradle-sandbox'
 version = '1.0'
-buildDir = 'target'
 
 task wrapper(type: Wrapper){
     description = "Generates gradlew scripts for NIX and win envs"
